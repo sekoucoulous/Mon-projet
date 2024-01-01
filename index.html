@@ -3,125 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatrice</title>
     <style>
-         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            margin: 30;
-            padding: 30;
-            display: inline;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f5e1; /* Crème claire pour le fond */
+            color: #333; /* Gris foncé pour le texte principal */
             text-align: center;
+            background:url(bpc.jpg);
+            color: rgba(51, 51, 51, 0.8);
+            background-size: cover;
+            background-size:1550px 710px;
+        }
+
+        header {
+            background-color: #ff6f61; /* Corail vif pour l'en-tête */
+            color: white;
+            padding: 1em;
+            background-color:transparent
+        }
+
+        h1{
+            color: #a48d26; /* Bleu nuit pour les titres principaux */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Std, fantasy,Impact, fantasy;
+        }
+         h2 {
+            color: #d3140e; /* Bleu nuit pour les titres principaux */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Std, fantasy,Impact, fantasy;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+            color:hsla(203, 89%, 38%, 0.963); /* Violet foncé pour le texte normal */
+            line-height: 1.6;;
+            font-family: Std, fantasy,Impact, fantasy;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 1em;
+            color: #3d405b; /* Bleu nuit pour le texte normal */
+            border:solid 10px;
             
         }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        form {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 300px;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
+        a {
+            text-decoration: none;
+            color: #ef476f; /* Rose corail pour les liens */
             font-weight: bold;
+            transition: color 0.3s ease-in-out;
         }
 
-        input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-            /* Augmenter la largeur du champ de saisie */
-            width: calc(100% - 22px);
+        a:hover {
+            color: #d62828; /* Rouge vif au survol des liens */
         }
 
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        footer {
+            background-color: #2a9d8f; /* Vert sarcelle vif pour le pied de page */
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        #resultat {
-            margin-top: 20px;
-            color: #333;
-            font-size: 18px;
-            font-weight: bold;
         }
     </style>
-    <script>
-        function calculer() {
-            // Récupérer les valeurs des champs
-            var nombre1 = parseFloat(document.getElementById('nombre1').value);
-            var nombre2 = parseFloat(document.getElementById('nombre2').value);
-
-            // Vérifier si les saisies sont des nombres valides
-            if (isNaN(nombre1) || isNaN(nombre2)) {
-                alert("Veuillez saisir des nombres valides.");
-                return;
-            }
-
-            // Vérifier la division par zéro
-            if (nombre2 === 0) {
-                alert("La division par zéro est impossible.");
-                return;
-            }
-
-            // Calculs
-            var somme = nombre1 + nombre2;
-            var multiplication = nombre1 * nombre2;
-            var division = nombre1 / nombre2;
-            var soustraction = nombre1 - nombre2;
-
-            // Affichage des résultats
-            document.getElementById('resultat').innerHTML = "Somme : " + somme + "<br>" +
-                                                            "Multiplication : " + multiplication + "<br>" +
-                                                            "Division : " + division + "<br>" +
-                                                            "Soustraction : " + soustraction;
-        }
-    </script>
+    <title>Document</title>
+</head>
+<body>
+    <title>Exercices PHP</title>
 </head>
 <body>
 
-    <h1>Calculatrice</h1>
-
-    <form>
-        <label for="nombre1">Nombre 1:</label>
-        <input type="text" id="nombre1" name="nombre1" placeholder="Entrez le premier nombre" required pattern="[0-9]+(\.[0-9]+)?"><br>
-
-        <label for="nombre2">Nombre 2:</label>
-        <input type="text" id="nombre2" name="nombre2" placeholder="Entrez le deuxième nombre" required pattern="[0-9]+(\.[0-9]+)?"><br>
-
-        <button type="button" onclick="calculer()">Calculer</button>
-    </form>
-
-    <div id="resultat"></div>
-
+    <header>
+        <h1>calculatrice en ligne</h1>
+    </header>
+        <h2>Bienvenue sur notre calculatrice interactive</h2>
+        <section>
+        <p>Transformez vos chiffres en résultats en un clin d'œil ! Notre page vous offre une expérience de calcul fluide et rapide. Il vous suffit de saisir deux nombres dans les champs dédiés, et notre calculatrice en ligne effectuera instantanément la somme, la multiplication, la division et la soustraction.</p>
+        <p>Que vous ayez besoin d'une réponse rapide pour un problème mathématique ou que vous souhaitiez simplement vérifier vos chiffres, notre outil convivial est là pour simplifier vos calculs. Plus besoin de jongler avec une calculatrice physique ou de faire des recherches compliquées en ligne.</p>
+        <p>La facilité d'utilisation de notre page permet à chacun, des étudiants aux professionnels, de bénéficier de calculs précis sans perdre de temps. Essayez dès maintenant notre calculatrice en ligne et découvrez comment simplifier vos opérations mathématiques au quotidien. Des résultats précis, un processus facile – tout ce dont vous avez besoin pour faire des calculs en toute confiance!</p>
+        <h2>voulez-vous continuer ?</h2>
+        <ul>
+            <li><a href="calculatrice.html">cliquer ici svp !!</a></li>
+           
+        </ul>
+    </section>
+        <p>Nom:Coulibaly</p>
+        <P>Prenom:Bassekou</P>
+        <p>Code:220763</p>
+        
+    
 </body>
 </html>

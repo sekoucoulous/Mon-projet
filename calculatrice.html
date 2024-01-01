@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #943c3c;
+            margin: 30;
+            padding: 30;
+            display: inline;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background:url(bpc.jpg);
+            background-size: cover;
+            background-size:1550px 710px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #1a1818;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            background-color:transparent;
+            border:solid
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #111010fb;
+            font-weight: bold;
+            
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #211f1f00;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            /* Augmenter la largeur du champ de saisie */
+            width: calc(100% - 22px);
+            background-color:transparent;
+            border:solid;
+            
+            
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #resultat {
+            margin-top: 20px;
+            color: #303124;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function calculer() {
+            // Récupérer les valeurs des champs
+            var nombre1 = parseFloat(document.getElementById('nombre1').value);
+            var nombre2 = parseFloat(document.getElementById('nombre2').value);
+
+            // Vérifier si les saisies sont des nombres valides
+            if (isNaN(nombre1) || isNaN(nombre2)) {
+                alert("Veuillez saisir des nombres valides.");
+                return;
+            }
+
+            // Vérifier la division par zéro
+            if (nombre2 === 0) {
+                alert("La division par zéro est impossible.");
+                return;
+            }
+
+            // Calculs
+            var somme = nombre1 + nombre2;
+            var multiplication = nombre1 * nombre2;
+            var division = nombre1 / nombre2;
+            var soustraction = nombre1 - nombre2;
+
+            // Affichage des résultats
+            document.getElementById('resultat').innerHTML = "Somme : " + somme + "<br>" +
+                                                            "Multiplication : " + multiplication + "<br>" +
+                                                            "Division : " + division + "<br>" +
+                                                            "Soustraction : " + soustraction;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Calculatrice</h1>
+
+    <form>
+        <label for="nombre1">Nombre 1:</label>
+        <input type="text" id="nombre1" name="nombre1" placeholder="Entrez le premier nombre" required pattern="[0-9]+(\.[0-9]+)?"><br>
+
+        <label for="nombre2">Nombre 2:</label>
+        <input type="text" id="nombre2" name="nombre2" placeholder="Entrez le deuxième nombre" required pattern="[0-9]+(\.[0-9]+)?"><br>
+
+        <button type="button" onclick="calculer()">Calculer</button>
+    </form>
+
+    <div id="resultat"></div>
+
+</body>
+</html>
